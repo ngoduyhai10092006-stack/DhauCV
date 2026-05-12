@@ -1,222 +1,157 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV - Ngọ Duy Hải</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<title>CV - Ngọ Duy Hải</title>
 
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      padding: 40px;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 25px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 30px rgba(0,0,0,0.3);
-    }
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    padding:40px;
+}
 
-    .header {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      padding: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    overflow:hidden;
+}
 
-    .avatar {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 6px solid rgba(255,255,255,0.3);
-      object-fit: cover;
-      background: white;
-    }
+.header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    padding:40px;
+    text-align:center;
+}
 
-    .header-info {
-      flex: 1;
-      padding-left: 40px;
-    }
+.header h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
 
-    .header-info h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+.header p{
+    font-size:20px;
+}
 
-    .header-info h2 {
-      font-size: 22px;
-      font-weight: 400;
-      color: #dbeafe;
-      margin-bottom: 20px;
-    }
+.content{
+    padding:40px;
+}
 
-    .header-info p {
-      line-height: 1.8;
-      max-width: 700px;
-    }
+.section{
+    margin-bottom:40px;
+}
 
-    .content {
-      display: grid;
-      grid-template-columns: 350px 1fr;
-    }
+.section h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
 
-    .left {
-      background: rgba(255,255,255,0.03);
-      padding: 35px;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
 
-    .right {
-      padding: 35px;
-    }
+.skill{
+    margin-bottom:15px;
+}
 
-    .section {
-      margin-bottom: 40px;
-    }
+.bar{
+    width:100%;
+    height:10px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
 
-    .section h3 {
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: #60a5fa;
-      position: relative;
-      padding-left: 18px;
-    }
+.bar span{
+    display:block;
+    height:100%;
+    background:#3b82f6;
+}
+</style>
+</head>
 
-    .section h3::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 6px;
-      height: 25px;
-      background: #3b82f6;
-      border-radius: 10px;
-    }
+<body>
 
-    .info-item {
-      margin-bottom: 15px;
-    }
+<div class="container">
 
-    .info-item strong {
-      color: #93c5fd;
-    }
+<div class="header">
+    <h1>Ngọ Duy Hải</h1>
+    <p>Future Fullstack Developer</p>
+</div>
 
-    .skill {
-      margin-bottom: 18px;
-    }
+<div class="content">
 
-    .skill-name {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
+<div class="section">
+<h2>Thông Tin</h2>
 
-    .bar {
-      width: 100%;
-      height: 10px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
+<div class="card">
+<p><b>Ngày sinh:</b> 10/09/2006</p>
+<p><b>Mã sinh viên:</b> B24DTCN463</p>
+<p><b>Lớp:</b> D24TXCN10-B</p>
+<p><b>Định hướng:</b> Web Developer</p>
+</div>
+</div>
 
-    .bar span {
-      display: block;
-      height: 100%;
-      background: linear-gradient(to right, #3b82f6, #8b5cf6);
-      border-radius: 10px;
-    }
+<div class="section">
+<h2>Kỹ Năng</h2>
 
-    .timeline {
-      border-left: 2px solid rgba(255,255,255,0.15);
-      padding-left: 25px;
-    }
+<div class="card">
 
-    .timeline-item {
-      margin-bottom: 30px;
-      position: relative;
-    }
+<div class="skill">
+<p>HTML & CSS</p>
+<div class="bar">
+<span style="width:90%"></span>
+</div>
+</div>
 
-    .timeline-item::before {
-      content: '';
-      width: 14px;
-      height: 14px;
-      background: #3b82f6;
-      border-radius: 50%;
-      position: absolute;
-      left: -33px;
-      top: 5px;
-    }
+<div class="skill">
+<p>PHP</p>
+<div class="bar">
+<span style="width:80%"></span>
+</div>
+</div>
 
-    .timeline-item h4 {
-      color: #93c5fd;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
+<div class="skill">
+<p>MySQL</p>
+<div class="bar">
+<span style="width:75%"></span>
+</div>
+</div>
 
-    .timeline-item p {
-      line-height: 1.8;
-      color: #e2e8f0;
-    }
+</div>
+</div>
 
-    .project-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 25px;
-      border-radius: 20px;
-      margin-bottom: 25px;
-      transition: 0.3s;
-    }
+<div class="section">
+<h2>Dự Án</h2>
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b82f6;
-    }
+<div class="card">
+<h3>Website Hoa Quả</h3>
+<p>Website bán thực phẩm hữu cơ bằng PHP & MySQL.</p>
+</div>
 
-    .project-card h4 {
-      margin-bottom: 12px;
-      color: #60a5fa;
-    }
+<div class="card">
+<h3>Portfolio IT</h3>
+<p>Website showcase kỹ năng và thành tích cá nhân.</p>
+</div>
 
-    .project-card p {
-      line-height: 1.8;
-      color: #e2e8f0;
-    }
+</div>
 
-    .tag {
-      display: inline-block;
-      padding: 8px 15px;
-      background: rgba(59,130,246,0.2);
-      border: 1px solid rgba(59,130,246,0.3);
-      border-radius: 50px;
-      margin: 5px;
-      font-size: 14px;
-    }
+</div>
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #94a3b8;
-      font-size: 14px;
-    }
+</div>
 
-    @media(max-width: 900px) {
-      .content {
+</body>
+</html>
