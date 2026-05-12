@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Ngọ Duy Hải</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid rgba(255,255,255,0.3);
+      object-fit: cover;
+      background: white;
+    }
+
+    .header-info {
+      flex: 1;
+      padding-left: 40px;
+    }
+
+    .header-info h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .header-info h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #dbeafe;
+      margin-bottom: 20px;
+    }
+
+    .header-info p {
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+    }
+
+    .left {
+      background: rgba(255,255,255,0.03);
+      padding: 35px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .right {
+      padding: 35px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .section h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 6px;
+      height: 25px;
+      background: #3b82f6;
+      border-radius: 10px;
+    }
+
+    .info-item {
+      margin-bottom: 15px;
+    }
+
+    .info-item strong {
+      color: #93c5fd;
+    }
+
+    .skill {
+      margin-bottom: 18px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+      border-radius: 10px;
+    }
+
+    .timeline {
+      border-left: 2px solid rgba(255,255,255,0.15);
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #3b82f6;
+      border-radius: 50%;
+      position: absolute;
+      left: -33px;
+      top: 5px;
+    }
+
+    .timeline-item h4 {
+      color: #93c5fd;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .timeline-item p {
+      line-height: 1.8;
+      color: #e2e8f0;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+    }
+
+    .project-card h4 {
+      margin-bottom: 12px;
+      color: #60a5fa;
+    }
+
+    .project-card p {
+      line-height: 1.8;
+      color: #e2e8f0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 15px;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 50px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media(max-width: 900px) {
+      .content {
