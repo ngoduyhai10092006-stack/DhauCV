@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Trang chủ</title>
- :root {
+
+  <style>
+:root {
   --primary-pink:#ff8b94;
   --secondary-pink:#ffb7b2;
   --soft-purple:#e2cef4;
-  --mint-green:#b5ead7;
 
   --text:#5d5151;
   --bg:linear-gradient(135deg,#fff5f5,#fef0f6,#f3eafb);
@@ -59,7 +60,6 @@ nav{
   border-radius:20px;
   text-decoration:none;
   color:var(--text);
-  transition:.3s;
 }
 
 .nav-links a:hover,
@@ -140,7 +140,6 @@ nav{
   background:white;
   padding:6px 14px;
   border-radius:20px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
 /* SECTION */
@@ -163,7 +162,7 @@ nav{
   background:linear-gradient(to right,var(--primary-pink),transparent);
 }
 
-/* GRID */
+/* ABOUT GRID */
 .about-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -181,6 +180,21 @@ nav{
   transform:translateY(-5px);
 }
 
+/* INFO ROW */
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+}
+
+.info-label{
+  color:#999;
+}
+
+.info-val{
+  font-weight:600;
+}
+
 /* CARDS */
 .cards-grid{
   display:grid;
@@ -195,6 +209,7 @@ nav{
   text-decoration:none;
   color:inherit;
   transition:.3s;
+  display:block;
 }
 
 .card:hover{
@@ -231,18 +246,20 @@ footer{
   text-align:center;
   padding:30px;
   margin-top:50px;
-  font-size:14px;
 }
 
 /* ANIMATION */
 @keyframes spin{
   100%{transform:rotate(360deg);}
 }
+  </style>
+
 </head>
+
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo"><span class="heart">🌸</span> My Portfolio</a>
+  <a href="index.html" class="nav-logo">🌸 My Portfolio</a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Giới thiệu</a></li>
     <li><a href="projects.html">Dự án</a></li>
@@ -253,144 +270,69 @@ footer{
 <div class="hero">
   <div class="avatar-wrap">
     <div class="avatar-ring"></div>
-    <!-- Hãy thay images.jpg bằng link ảnh thật của bạn nhé -->
-    <img src="images.jpg" alt="Ngọ Phương Anh🌷" style="position: absolute; top: 5px; left: 5px; width: calc(100% - 10px); height: calc(100% - 10px);">
+    <img src="images.jpg" alt="avatar">
     <div class="avatar-badge">✨ SV 2025</div>
   </div>
-  
-  <!-- ✏️ ĐỔI TÊN CỦA BẠN VÀO ĐÂY -->
-  <h1 class="hero-name">Xin chào, mình là <span class="gradient-text">Ngọ Phương Anh</span> ~</h1>
-  <p class="hero-sub">Sinh viên ngành Công nghệ số · Trường Đại học · Khóa 2025</p>
-  
+
+  <h1 class="hero-name">
+    Xin chào, mình là <span class="gradient-text">Ngọ Phương Anh</span>
+  </h1>
+
+  <p class="hero-sub">Sinh viên Công nghệ số</p>
+
   <div class="tags-row">
-    <span class="tag">🎀 Công nghệ số</span>
-    <span class="tag">🤖 AI ứng dụng</span>
-    <span class="tag">📚 Học thuật</span>
-    <span class="tag">💡 Sáng tạo</span>
-    <span class="tag">🌸 Nhiệt tình</span>
+    <span class="tag">AI</span>
+    <span class="tag">Sáng tạo</span>
+    <span class="tag">Học thuật</span>
   </div>
 </div>
 
-<!-- GIỚI THIỆU BẢN THÂN -->
 <div class="section">
+
   <div class="section-header">
-    <div class="section-icon">👋</div>
-    <span class="section-title">Về mình</span>
+    <h2>Về mình</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="about-grid">
+
     <div class="info-box">
-      <h4>🌸 Thông tin cá nhân</h4>
-      <div class="info-row">
-        <span class="info-label">Họ tên</span>
-        <span class="info-val">Ngọ Phương Anh</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">Ngành học</span>
-        <span class="info-val">Công nghệ số</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">Trường</span>
-        <span class="info-val">Đại học ...</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">Sở thích</span>
-        <span class="info-val">Học AI, sáng tạo 🌷</span>
-      </div>
+      <h4>Thông tin</h4>
+      <div class="info-row"><span class="info-label">Tên</span><span class="info-val">Ngọ Phương Anh</span></div>
+      <div class="info-row"><span class="info-label">Ngành</span><span class="info-val">Công nghệ số</span></div>
     </div>
 
     <div class="info-box">
-      <h4>🎯 Mục tiêu học tập</h4>
-      <div class="info-row" style="flex-direction:column; gap:6px; text-align: left;">
-        <span class="info-val" style="text-align: left; font-weight: normal;">📌 Nắm vững kỹ năng số & ứng dụng AI.</span>
-        <span class="info-val" style="text-align: left; font-weight: normal;">📌 Phát triển tư duy sáng tạo nội dung.</span>
-        <span class="info-val" style="text-align: left; font-weight: normal;">📌 Sử dụng công nghệ có trách nhiệm.</span>
-      </div>
+      <h4>Mục tiêu</h4>
+      <p>Học AI và phát triển kỹ năng số</p>
     </div>
 
     <div class="info-box">
-      <h4>💼 Mục tiêu Portfolio</h4>
-      <div class="info-row" style="flex-direction:column; gap:6px;">
-        <span class="info-val" style="text-align: left; font-weight: normal;">✨ Thể hiện các kỹ năng số đã học.</span>
-        <span class="info-val" style="text-align: left; font-weight: normal;">✨ Lưu trữ và chia sẻ sản phẩm cá nhân.</span>
-        <span class="info-val" style="text-align: left; font-weight: normal;">✨ Giới thiệu năng lực bản thân.</span>
-      </div>
+      <h4>Kỹ năng</h4>
+      <span class="skill-chip">AI</span>
+      <span class="skill-chip">Prompt</span>
+      <span class="skill-chip">HTML</span>
     </div>
 
-    <div class="info-box">
-      <h4>🌟 Kỹ năng nổi bật</h4>
-      <div class="info-row" style="flex-wrap:wrap; gap:8px; margin-top:4px;">
-        <span class="skill-chip">Tìm kiếm học thuật</span>
-        <span class="skill-chip">Prompt Eng</span>
-        <span class="skill-chip">AI tạo sinh</span>
-        <span class="skill-chip">Hợp tác online</span>
-        <span class="skill-chip">Liêm chính</span>
-      </div>
-    </div>
   </div>
 </div>
 
-<!-- 6 BÀI TẬP OVERVIEW -->
 <div class="section">
-  <div class="section-header">
-    <div class="section-icon">📋</div>
-    <span class="section-title">Các bài tập thành phần</span>
-    <div class="section-line"></div>
-  </div>
-  
+
+  <h2>📋 Bài tập</h2>
+
   <div class="cards-grid">
-    <a href="projects.html#bt1" class="card">
-      <div class="card-badge">BÀI 1</div>
-      <h3>Thao tác tệp tin & thư mục</h3>
-      <p>Cấu trúc thư mục tối ưu, quy tắc đặt tên tệp và ảnh minh họa.</p>
-      <div class="card-arrow">→</div>
-    </a>
-    <a href="projects.html#bt2" class="card">
-      <div class="card-badge">BÀI 2</div>
-      <h3>Tìm kiếm thông tin học thuật</h3>
-      <p>Toán tử tìm kiếm nâng cao và bảng đánh giá nguồn tin.</p>
-      <div class="card-arrow">→</div>
-    </a>
-    <a href="projects.html#bt3" class="card">
-      <div class="card-badge">BÀI 3</div>
-      <h3>Viết Prompt hiệu quả</h3>
-      <p>So sánh prompt ban đầu và cải tiến cùng kết quả thực tế.</p>
-      <div class="card-arrow">→</div>
-    </a>
-    <a href="projects.html#bt4" class="card">
-      <div class="card-badge">BÀI 4</div>
-      <h3>Hợp tác trực tuyến nhóm</h3>
-      <p>Công cụ quản lý dự án nhóm và cách phối hợp online hiệu quả.</p>
-      <div class="card-arrow">→</div>
-    </a>
-    <a href="projects.html#bt5" class="card">
-      <div class="card-badge">BÀI 5</div>
-      <h3>AI hỗ trợ sáng tạo</h3>
-      <p>Sản phẩm nội dung số hoàn thiện được tạo với sự hỗ trợ của AI.</p>
-      <div class="card-arrow">→</div>
-    </a>
-    <a href="projects.html#bt6" class="card">
-      <div class="card-badge">BÀI 6</div>
-      <h3>Sử dụng AI có trách nhiệm</h3>
-      <p>Bộ nguyên tắc cá nhân về sử dụng AI dựa trên nghiên cứu.</p>
-      <div class="card-arrow">→</div>
-    </a>
-  </div>
-</div>
 
-<div class="section">
-  <div class="divider">🌸 🌷 🌸</div>
-  <div style="text-align:center">
-    <a href="projects.html" class="btn">Xem tất cả dự án 🌷</a>
-    &nbsp;&nbsp;
-    <a href="summary.html" class="btn btn-outline">Tổng kết hành trình 🎀</a>
+    <a class="card" href="#">Bài 1</a>
+    <a class="card" href="#">Bài 2</a>
+    <a class="card" href="#">Bài 3</a>
+
   </div>
+
 </div>
 
 <footer>
-  <p>🌸 Digital Portfolio · Nhập môn Công nghệ số & Ứng dụng Trí tuệ Nhân tạo</p>
-  <p style="margin-top:5px;">Được làm với 💕 bởi <strong>Ngọ Phương Anh</strong></p>
+  <p>© 2025 Portfolio</p>
 </footer>
 
 </body>
