@@ -3,731 +3,564 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ngọ Phương Anh Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+<title>Ngọ Phương Anh | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --sakura:#E8A0B4;
+  --sakura-l:#F7DCE6;
+  --sakura-d:#C4657A;
+  --ink:#2C2020;
+  --ink-m:#6B5B5B;
+  --ink-s:#A08888;
+  --washi:#FAF7F4;
+  --washi-d:#F0EAE3;
+  --gold:#C8A86B;
+  --gold-l:rgba(200,168,107,0.2);
+  --moss:#7A9E7E;
+  --br:rgba(200,168,107,0.22);
 }
-
-html{
-    scroll-behavior:smooth;
-    font-size:16px;
-}
-
-body,
-h1,h2,h3,h4,h5,h6,
-p,span,div,
-a,li,ul,ol,
-strong,b,
-button,input,textarea{
-    font-family:
-    'Be Vietnam Pro',
-    'Noto Sans JP',
-    'Segoe UI',
-    sans-serif;
-
-    font-size:inherit;
-    font-weight:400;
-    line-height:1.8;
-    letter-spacing:0;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    text-rendering:optimizeLegibility;
-}
-
 body{
-    background:linear-gradient(
-    135deg,
-    #ffe4f1,
-    #f8e8ff,
-    #e9d5ff,
-    #fde2f3
-    );
-    background-size:400% 400%;
-    animation:bgmove 15s ease infinite;
-    color:#444;
+  font-family:'Be Vietnam Pro','Noto Sans JP',sans-serif;
+  background:var(--washi);
+  color:var(--ink);
+  font-weight:300;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 
-@keyframes bgmove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* PETALS */
+.sakura-bg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+@keyframes fall{
+  0%{transform:translateY(-30px) rotate(0deg);opacity:0}
+  6%{opacity:.5}
+  92%{opacity:.3}
+  100%{transform:translateY(105vh) rotate(600deg);opacity:0}
 }
 
-/* HEADER */
+/* LAYOUT */
+.wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 2rem}
 
+/* NAV */
 header{
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,.05);
+  background:rgba(250,247,244,.96);
+  backdrop-filter:blur(12px);
+  position:sticky;top:0;z-index:1000;
+  border-bottom:.5px solid var(--br);
 }
-
-nav{
-    width:90%;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 0;
-}
-
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
 .logo{
-    font-size:28px;
-    font-weight:700;
-    color:#ec4899;
+  font-family:'Noto Serif JP',serif;
+  font-size:1.1rem;font-weight:400;
+  color:var(--sakura-d);letter-spacing:.08em;
 }
-
-nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav ul li{
-    margin-left:25px;
-}
-
+nav ul{display:flex;list-style:none;gap:1.5rem}
 nav a{
-    text-decoration:none;
-    color:#555;
-    font-weight:600;
-    transition:.3s;
+  text-decoration:none;color:var(--ink-m);
+  font-size:.85rem;font-weight:400;
+  letter-spacing:.05em;transition:color .25s;
 }
+nav a:hover{color:var(--sakura-d)}
 
-nav a:hover{
-    color:#ec4899;
-}
+/* KAMON DIVIDER */
+.kamon{display:flex;align-items:center;gap:1rem;margin:2.5rem 0}
+.kamon-l{flex:1;height:.5px;background:linear-gradient(to right,transparent,var(--gold))}
+.kamon-r{flex:1;height:.5px;background:linear-gradient(to left,transparent,var(--gold))}
+.kamon-c{width:9px;height:9px;border:.5px solid var(--gold);transform:rotate(45deg);background:var(--sakura-l)}
 
 /* HERO */
-
 .hero{
-    width:90%;
-    margin:auto;
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  min-height:88vh;display:flex;
+  align-items:center;justify-content:space-between;
+  gap:3rem;padding:4rem 0 3rem;
 }
-
-.hero-text{
-    flex:1;
+.hero-text{flex:1.2}
+.hero-jp{
+  font-family:'Noto Serif JP',serif;
+  font-size:.75rem;letter-spacing:.5em;
+  color:var(--sakura-d);margin-bottom:1.2rem;
 }
-
-.hero-text h1{
-    font-size:65px;
-    font-weight:700;
-    color:#db2777;
-    text-shadow:
-    0 0 10px #f9a8d4,
-    0 0 20px #f9a8d4;
+.hero-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(2.4rem,5vw,3.5rem);
+  font-weight:300;color:var(--ink);
+  letter-spacing:.04em;line-height:1.2;
+  margin-bottom:.5rem;
 }
-
-.hero-text h2{
-    font-size:28px;
-    font-weight:600;
-    color:#9333ea;
-    margin:10px 0;
+.hero-sub{
+  font-size:.95rem;color:var(--sakura-d);
+  font-weight:400;margin-bottom:.4rem;letter-spacing:.05em;
 }
-
-.hero-text h3{
-    font-size:24px;
-    font-weight:600;
+.hero-jp2{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.1rem;color:var(--ink-s);
+  margin-bottom:1.2rem;
 }
-
-.hero-text p{
-    margin-top:15px;
-    max-width:600px;
-    line-height:1.9;
+.hero-desc{
+  max-width:480px;font-size:.9rem;
+  color:var(--ink-m);line-height:1.95;margin-bottom:2rem;
 }
-
+.hero-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.tag{
+  padding:.28rem .9rem;
+  border:.5px solid var(--sakura);
+  border-radius:2rem;font-size:.75rem;
+  color:var(--sakura-d);
+  background:rgba(232,160,180,.08);
+  letter-spacing:.04em;
+}
 .btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
-    background:#ec4899;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
+  display:inline-block;
+  padding:.65rem 1.6rem;
+  background:var(--sakura-d);color:white;
+  text-decoration:none;border-radius:2rem;
+  font-size:.82rem;font-weight:400;
+  letter-spacing:.06em;transition:.25s;
 }
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 15px pink;
-}
+.btn:hover{background:#B05570;transform:translateY(-2px)}
 
 /* AVATAR */
-
-.hero-img{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    position:relative;
+.hero-img{flex:1;display:flex;justify-content:center;position:relative}
+.avatar-ring{
+  width:280px;height:280px;
+  border-radius:50%;
+  border:.5px solid var(--sakura);
+  padding:8px;background:var(--washi);
+  position:relative;
 }
-
+.avatar-ring::before{
+  content:'';position:absolute;
+  inset:-12px;border-radius:50%;
+  border:.5px solid var(--br);
+}
 .hero-img img{
-    width:320px;
-    height:320px;
-    object-fit:cover;
-    border-radius:50%;
-    border:8px solid white;
-    box-shadow:
-    0 0 20px pink,
-    0 0 50px #d8b4fe;
-    animation:float 3s ease-in-out infinite;
+  width:100%;height:100%;
+  object-fit:cover;border-radius:50%;
+  animation:float 4s ease-in-out infinite;
 }
-
-.hero-img::before,
-.hero-img::after{
-    content:"";
-    position:absolute;
-    top:-15px;
-    width:70px;
-    height:70px;
-    background:white;
-    border:5px solid #f9a8d4;
-    transform:rotate(45deg);
-    z-index:-1;
+@keyframes float{50%{transform:translateY(-12px)}}
+.avatar-deco{
+  position:absolute;
+  width:44px;height:44px;
+  border:.5px solid var(--sakura);
+  transform:rotate(45deg);
+  background:var(--sakura-l);opacity:.7;
 }
-
-.hero-img::before{
-    left:110px;
-}
-
-.hero-img::after{
-    right:110px;
-}
-
-@keyframes float{
-    50%{
-        transform:translateY(-15px);
-    }
-}
+.deco-tl{top:-8px;left:60px}
+.deco-tr{top:-8px;right:60px}
 
 /* SECTION */
-
-section{
-    width:90%;
-    margin:auto;
-    padding:80px 0;
+section{padding:5rem 0}
+.sec-head{margin-bottom:2.5rem}
+.sec-eyebrow{
+  font-family:'Noto Serif JP',serif;
+  font-size:.7rem;color:var(--gold);
+  letter-spacing:.35em;display:block;margin-bottom:.4rem;
+}
+.sec-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.55rem;font-weight:400;
+  color:var(--ink);letter-spacing:.04em;
+}
+.sec-jp{
+  font-family:'Noto Serif JP',serif;
+  font-size:.75rem;color:var(--ink-s);
+  letter-spacing:.2em;margin-top:.2rem;display:block;
 }
 
-.title{
-    text-align:center;
-    font-size:40px;
-    font-weight:700;
-    color:#db2777;
-    margin-bottom:40px;
-}
+/* ABOUT CARD */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--br);border:.5px solid var(--br)}
+.about-cell{background:var(--washi);padding:1.1rem 1.4rem;transition:background .25s}
+.about-cell:hover{background:var(--washi-d)}
+.about-label{font-size:.72rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.25rem}
+.about-val{font-size:.88rem;color:var(--ink-m);line-height:1.7}
+.about-val strong{font-weight:500;color:var(--ink)}
 
-/* CARD */
+/* SKILL BARS */
+.skill-section{margin-top:2rem}
+.skill-item{margin-bottom:1.5rem}
+.skill-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem}
+.skill-name{font-size:.85rem;color:var(--ink-m)}
+.skill-pct{font-family:'Noto Serif JP',serif;font-size:.75rem;color:var(--gold)}
+.bar{height:3px;background:var(--washi-d);border-radius:2px}
+.progress{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--sakura),var(--gold))}
+.n3{width:75%}.canva{width:90%}.ppt{width:85%}.lang{width:65%}
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    margin-bottom:25px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    font-size:22px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-.card h4{
-    font-size:18px;
-    font-weight:600;
-}
-
-.card p,
-.card li{
-    font-size:16px;
-    line-height:1.9;
-}
-
-/* SKILL */
-
-.bar{
-    height:15px;
-    background:#eee;
-    border-radius:30px;
-    margin-bottom:25px;
-}
-
-.progress{
-    height:100%;
-    border-radius:30px;
-    background:linear-gradient(
-    90deg,
-    #f472b6,
-    #c084fc
-    );
-}
-
-.n3{width:75%;}
-.canva{width:90%;}
-.ppt{width:85%;}
-.htmlcss{width:65%;}
-
-/* PROJECT */
-
-.projects{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--br);border:.5px solid var(--br)}
 .project{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    transition:.3s;
+  background:var(--washi);padding:2rem;
+  transition:background .25s;position:relative;
+  overflow:hidden;
 }
-
-.project:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(236,72,153,.3);
+.project::before{
+  content:'';position:absolute;top:0;left:0;
+  right:0;height:2px;
+  background:linear-gradient(90deg,var(--sakura),var(--gold));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s;
 }
-
+.project:hover{background:var(--washi-d)}
+.project:hover::before{transform:scaleX(1)}
+.proj-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:.72rem;color:var(--gold);
+  letter-spacing:.2em;margin-bottom:.6rem;display:block;
+}
 .project h3{
-    font-size:24px;
-    font-weight:700;
-    color:#db2777;
-    margin-bottom:12px;
+  font-size:1rem;font-weight:500;
+  color:var(--ink);margin-bottom:.5rem;line-height:1.5;
 }
-
 .project h4{
-    font-size:18px;
-    font-weight:600;
-    color:#555;
-    margin:12px 0;
+  font-size:.82rem;font-weight:500;
+  color:var(--sakura-d);margin:.8rem 0 .4rem;
 }
+.project p,.project li{font-size:.83rem;color:var(--ink-m);line-height:1.85}
+.project ul{padding-left:1rem}
+.project li{margin-bottom:.25rem}
+.proj-btn{
+  display:inline-block;margin-top:1.2rem;
+  padding:.45rem 1.2rem;
+  border:.5px solid var(--sakura);
+  border-radius:2rem;font-size:.75rem;
+  color:var(--sakura-d);text-decoration:none;
+  letter-spacing:.06em;transition:.25s;
+}
+.proj-btn:hover{background:var(--sakura-d);color:white;border-color:var(--sakura-d)}
 
-.project p,
-.project li{
-    font-size:16px;
-    line-height:1.9;
+/* SUMMARY */
+.summary-card{
+  border-left:2px solid var(--sakura);
+  padding:1.6rem 2rem;margin-bottom:1.5rem;
+  background:rgba(247,220,230,.12);
 }
+.summary-card h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:1rem;font-weight:400;
+  color:var(--ink);margin-bottom:1rem;
+}
+.summary-card p,.summary-card li{font-size:.88rem;color:var(--ink-m);line-height:1.9}
+.summary-card li{margin-bottom:.6rem;list-style:none;padding-left:1rem;position:relative}
+.summary-card li::before{content:'◆';position:absolute;left:0;color:var(--sakura);font-size:.55rem;top:.45rem}
+.summary-card strong{font-weight:500;color:var(--ink)}
+.highlight{
+  background:rgba(200,168,107,.08);
+  border:.5px solid var(--br);
+  padding:1.2rem 1.5rem;margin-bottom:1rem;
+}
+.highlight h4{font-size:.82rem;font-weight:500;color:var(--gold);margin-bottom:.5rem;letter-spacing:.1em}
 
-strong,
-b{
-    font-weight:600;
-}
+/* QUOTE */
+.quote-div{text-align:center;padding:2.5rem 0;font-family:'Noto Serif JP',serif;font-size:.8rem;color:var(--ink-s);letter-spacing:.3em}
+.quote-div em{display:block;font-size:1.3rem;color:var(--sakura);margin-bottom:.6rem;font-style:normal}
 
 /* FOOTER */
-
 footer{
-    text-align:center;
-    padding:40px;
-    background:white;
-    margin-top:50px;
-    font-size:16px;
+  text-align:center;padding:3rem 0;
+  border-top:.5px solid var(--br);
+  margin-top:2rem;
 }
-
-/* FIX EMOJI */
-
-.emoji{
-    font-family:
-    'Segoe UI Emoji',
-    'Apple Color Emoji',
-    sans-serif;
-}
+.footer-jp{font-family:'Noto Serif JP',serif;font-size:1rem;color:var(--sakura-d);letter-spacing:.15em;margin-bottom:.4rem}
+.footer-sub{font-size:.78rem;color:var(--ink-s);letter-spacing:.12em}
 
 /* MOBILE */
-
-@media(max-width:768px){
-
-    .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-        padding-top:40px;
-    }
-
-    .hero-text h1{
-        font-size:42px;
-    }
-
-    .hero-text h2{
-        font-size:24px;
-    }
-
-    .hero-img img{
-        width:220px;
-        height:220px;
-    }
-
-    .hero-img::before{
-        left:60px;
-    }
-
-    .hero-img::after{
-        right:60px;
-    }
-
-    nav{
-        flex-direction:column;
-    }
-
-    nav ul{
-        margin-top:15px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .title{
-        font-size:32px;
-    }
-
-    .project h3{
-        font-size:21px;
-    }
+@media(max-width:680px){
+  .wrap{padding:0 1.25rem}
+  .hero{flex-direction:column-reverse;padding:3rem 0 2rem;text-align:center;gap:2rem}
+  .hero-tags{justify-content:center}
+  .avatar-ring{width:200px;height:200px}
+  .about-grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  nav ul{gap:.8rem}
 }
-
 </style>
-
 </head>
-
 <body>
 
+<div class="sakura-bg" id="sakuraBg"></div>
+
+<!-- NAV -->
 <header>
-
+<div class="wrap">
 <nav>
-
-<div class="logo">🌸 PhuongAnh</div>
-
-<ul>
-<li><a href="#home">🏠 Trang Chủ</a></li>
-<li><a href="#about">🌸 Giới Thiệu</a></li>
-<li><a href="#projects">📚 Dự Án</a></li>
-<li><a href="#summary">💖 Tổng Kết</a></li>
-</ul>
-
+  <div class="logo">🌸 PhuongAnh</div>
+  <ul>
+    <li><a href="#home">Trang chủ</a></li>
+    <li><a href="#about">Giới thiệu</a></li>
+    <li><a href="#projects">Dự án</a></li>
+    <li><a href="#summary">Tổng kết</a></li>
+  </ul>
 </nav>
-
+</div>
 </header>
 
+<!-- HERO -->
+<div class="wrap">
 <section class="hero" id="home">
-
-<div class="hero-text">
-
-<h1>Ngọ Phương Anh</h1>
-
-<h2>Sinh viên Nhật Bản học</h2>
-
-<h3>
-こんにちは!
-</h3>
-
-<p>
-Portfolio này được xây dựng nhằm lưu trữ các sản phẩm học tập và mô tả quá trình phát triển kỹ năng số của bản thân tôi.
-</p>
-
-<a href="#projects" class="btn">
-✨ Nhấn vào đây để xem những dự án của tôi nhé!
-</a>
-
-</div>
-
-<div class="hero-img">
-<img src="phuonganh.jpg" alt="Ngọ Phương Anh">
-</div>
-
+  <div class="hero-text">
+    <p class="hero-jp">日本語学習者 ✦ ポートフォリオ</p>
+    <h1 class="hero-name">Ngọ Phương Anh</h1>
+    <p class="hero-sub">Sinh viên Nhật Bản học · Đại học Việt Nhật</p>
+    <p class="hero-jp2">こんにちは！</p>
+    <p class="hero-desc">Portfolio này được xây dựng nhằm lưu trữ các sản phẩm học tập và mô tả quá trình phát triển kỹ năng số của bản thân tôi.</p>
+    <div class="hero-tags">
+      <span class="tag">JLPT N3</span>
+      <span class="tag">Prompt Engineering</span>
+      <span class="tag">Trello & Notion</span>
+      <span class="tag">AI Literacy</span>
+      <span class="tag">日本語</span>
+    </div>
+    <a href="#projects" class="btn">✨ Xem dự án của tôi</a>
+  </div>
+  <div class="hero-img">
+    <div class="avatar-deco deco-tl"></div>
+    <div class="avatar-deco deco-tr"></div>
+    <div class="avatar-ring">
+      <img src="phuonganh.jpg" alt="Ngọ Phương Anh">
+    </div>
+  </div>
 </section>
 
+<div class="kamon"><div class="kamon-l"></div><div class="kamon-c"></div><div class="kamon-r"></div></div>
+
+<!-- ABOUT -->
 <section id="about">
+  <div class="sec-head">
+    <span class="sec-eyebrow">一 ＿＿ GIỚI THIỆU</span>
+    <div class="sec-title">Giới Thiệu Bản Thân</div>
+    <span class="sec-jp">自己紹介</span>
+  </div>
 
-<h2 class="title">🌸 Giới Thiệu Bản Thân 🌸</h2>
+  <div class="about-grid">
+    <div class="about-cell"><div class="about-label">HỌ TÊN</div><div class="about-val"><strong>Ngọ Phương Anh</strong></div></div>
+    <div class="about-cell"><div class="about-label">NGÀNH HỌC</div><div class="about-val">Nhật Bản học</div></div>
+    <div class="about-cell"><div class="about-label">TRƯỜNG</div><div class="about-val">Đại học Việt Nhật – ĐHQGHN</div></div>
+    <div class="about-cell"><div class="about-label">TRÌNH ĐỘ</div><div class="about-val"><strong>JLPT N3</strong></div></div>
+    <div class="about-cell"><div class="about-label">SỞ THÍCH</div><div class="about-val">Anime · Hát · Du lịch · Thiết kế sáng tạo</div></div>
+    <div class="about-cell"><div class="about-label">MỤC TIÊU</div><div class="about-val">Nâng cao kỹ năng công nghệ số, ứng dụng AI có trách nhiệm vào học tập và nghiên cứu</div></div>
+  </div>
 
-<div class="card">
-<p><b>👧 Họ tên:</b> Ngọ Phương Anh</p>
-<p><b>🎓 Ngành học:</b> Nhật Bản học</p>
-<p><b>🏫 Trường:</b> Đại học Việt Nhật-ĐHQGHN</p>
-<p><b>🏅 Trình độ:</b> JLPT N3</p>
-<p><b>🎀 Sở thích:</b> Anime - Hát - Du lịch - Thiết kế sáng tạo</p>
-<p><b>🎯 Mục tiêu học tập:</b> Nâng cao kỹ năng sử dụng công nghệ số - Phát triển kỹ năng sáng tạo, quản lý thông tin - Ứng dụng AI một cách hiệu quả, có trách nhiệm để hỗ trợ học tập và nghiên cứu</p>
-</div>
-
-<div class="card">
-
-<h3>✨ Kỹ năng</h3><br>
-
-<p>🏅 Tiếng Nhật N3</p>
-<div class="bar"><div class="progress n3"></div></div>
-
-<p>🎨 Thiết Kế</p>
-<div class="bar"><div class="progress canva"></div></div>
-
-<p>💻 Thuyết Trình</p>
-<div class="bar"><div class="progress ppt"></div></div>
-
-<p>🌐 Ngoại Giao</p>
-<div class="bar"><div class="progress htmlcss"></div></div>
-
-</div>
-
+  <div class="skill-section">
+    <div class="skill-item">
+      <div class="skill-row"><span class="skill-name">🏅 Tiếng Nhật N3</span><span class="skill-pct">75%</span></div>
+      <div class="bar"><div class="progress n3"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-row"><span class="skill-name">🎨 Thiết kế (Canva)</span><span class="skill-pct">90%</span></div>
+      <div class="bar"><div class="progress canva"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-row"><span class="skill-name">💻 Thuyết trình</span><span class="skill-pct">85%</span></div>
+      <div class="bar"><div class="progress ppt"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-row"><span class="skill-name">🌐 Ngoại giao</span><span class="skill-pct">65%</span></div>
+      <div class="bar"><div class="progress lang"></div></div>
+    </div>
+  </div>
 </section>
 
+<div class="kamon"><div class="kamon-l"></div><div class="kamon-c"></div><div class="kamon-r"></div></div>
+
+<!-- PROJECTS -->
 <section id="projects">
+  <div class="sec-head">
+    <span class="sec-eyebrow">二 ＿＿ DỰ ÁN</span>
+    <div class="sec-title">Những Dự Án Của Tôi</div>
+    <span class="sec-jp">プロジェクト</span>
+  </div>
 
-<h2 class="title">📚 Những Dự Án Của Tôi 📚</h2>
+  <div class="projects">
 
-<div class="projects">
+    <div class="project">
+      <span class="proj-num">BÀI 01</span>
+      <h3>💻 Máy tính và thiết bị ngoại vi</h3>
+      <h4>Bài tập 1: Thao tác cơ bản với tệp tin và thư mục</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Rèn luyện kỹ năng tạo, đổi tên, sao chép, di chuyển, xóa tệp tin và thư mục một cách thành thạo trên Windows.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Mở File Explorer bằng Windows + E</li>
+        <li><strong>2.</strong> Truy cập ổ đĩa D/E</li>
+        <li><strong>3.</strong> Tạo thư mục mới: <em>ThucHanh_HoTenSinhVien</em></li>
+        <li><strong>4.</strong> Tạo tệp văn bản: <em>GhiChu.txt</em></li>
+        <li><strong>5.</strong> Đổi tên tệp thành <em>GhiChuQuanTrong.txt</em></li>
+        <li><strong>6.</strong> Tạo thư mục con: <em>TaiLieu</em></li>
+        <li><strong>7.</strong> Sao chép tệp vào thư mục TaiLieu</li>
+        <li><strong>8.</strong> Tạo và di chuyển <em>DiChuyen.txt</em> bằng Cut → Paste</li>
+        <li><strong>9.</strong> Xóa tệp vào Recycle Bin và Shift+Delete</li>
+      </ul>
+      <a class="proj-btn" href="BAI_TAP_1_THAO_TAC_CO_BAN_VOI_TEP_TIN_VA_THU_MUC_2_.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>💻 Bài 1: Máy tính và thiết bị ngoại vi</h3>
-<h4> Bài tập 1:Thao tác cơ bản với tệp tin và thư mục</h4>
-<h4>
-🎯 Mục tiêu bài tập</h4>
-<p>Rèn luyện kỹ năng tạo, đổi tên, sao chép, di chuyển, xóa tệp tin và thư mục một cách thành thạo trên hệ điều hành Windows (có thể điều chỉnh cho macOS/Linux).</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p> <strong>1. Mở File Explorer</strong> bằng Windows + E.</p>
-<p><strong>2. Truy cập ổ đĩa D/E</strong>  (hoặc Documents nếu chỉ có ổ C).</p>
-<p><strong>3. Tạo thư mục mới tên:</strong>  ThucHanh_HoTenSinhVien.</p>
-<p><strong>4. Mở thư mục vừa tạo.</strong> </p>
-<p><strong>5. Tạo tệp văn bản tên:</strong>  GhiChu.txt.</p>
-<p><strong>6. Đổi tên tệp thành:</strong>  GhiChuQuanTrong.txt.</p>
-<p><strong>7. Tạo thư mục con tên:</strong>  TaiLieu.</p>
-<p><strong>8. Sao chép tệp</strong>  GhiChuQuanTrong.txt vào thư mục TaiLieu.</p>
-<p><strong>9. Tạo tệp mới tên:</strong>  DiChuyen.txt.</p>
-<p><strong>10. Di chuyển tệp</strong>  DiChuyen.txt vào thư mục TaiLieu bằng Cut → Paste.</p>
-<p><strong>11. Xóa tệp </strong> GhiChuQuanTrong.txt trong thư mục TaiLieu (Delete → vào Recycle Bin).</p>
-<p>12.<strong> Xóa vĩnh viễn</strong>  tệp DiChuyen.txt trong thư mục TaiLieu bằng Shift + Delete.</p>
-<a class="btn" href="BAI_TAP_1_THAO_TAC_CO_BAN_VOI_TEP_TIN_VA_THU_MUC_2_.pdf">Xem bài tập</a>
-</div>
+    <div class="project">
+      <span class="proj-num">BÀI 02</span>
+      <h3>🔍 Khai thác dữ liệu và thông tin</h3>
+      <h4>Bài tập 2: Tìm kiếm và đánh giá thông tin học thuật</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Phát triển kỹ năng tìm kiếm và đánh giá thông tin học thuật từ các nguồn đáng tin cậy.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Chọn chủ đề và xác định phạm vi nghiên cứu rõ ràng</li>
+        <li><strong>2.</strong> Thu thập hơn 10 tài liệu chất lượng cao (4 loại nguồn bắt buộc)</li>
+        <li><strong>3.</strong> Đánh giá độ tin cậy theo 5 tiêu chí: tác giả, cơ quan, phương pháp, trích dẫn, tính cập nhật</li>
+        <li><strong>4.</strong> Lập bảng tổng hợp và xếp hạng độ tin cậy</li>
+        <li><strong>5.</strong> Viết báo cáo và trích dẫn chuẩn Harvard</li>
+      </ul>
+      <a class="proj-btn" href="BAI_TAP_2_bao-cao-tim-kiem-va-danh-gia-thong-tin-hoc-thuat.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>🔍 Bài 2: Khai thác dữ liệu và thông tin</h3>
-<h4>Bài tập 2: Tìm kiếm và đánh giá thông tin học thuật</h4>
-<h4>🎯 Mục tiêu bài tập</h4>
-<p>Phát triển kỹ năng tìm kiếm và đánh giá thông tin học thuật từ các nguồn đáng tin cậy.</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p> <strong>1. Chọn chủ đề và phạm vi:</strong>  Chọn một chủ đề thuộc đúng ngành học nhưng có tính thách thức cao và xác định phạm vi nghiên cứu thật rõ ràng, cụ thể.</p>
- <p> <strong>2. Thu thập tài liệu đa dạng: </strong> Tìm kiếm và thu thập nhiều hơn 10 tài liệu chất lượng cao, bao gồm đủ 4 loại nguồn bắt buộc (báo học thuật, tạp chí, sách, nguồn mở) kết hợp thêm các nguồn ngoài yêu cầu khác.</p>
- <p><strong>3. Đánh giá độ tin cậy:</strong>  Phân tích từng tài liệu dựa trên 5 tiêu chí bắt buộc gồm: tác giả, cơ quan xuất bản, phương pháp nghiên cứu, trích dẫn và tính cập nhật.</p>
-<p> <strong>4. Lập bảng tổng hợp:</strong>  Thiết kế một bảng hệ thống hóa lại toàn bộ các nguồn thông tin đã tìm được, đi kèm nội dung đánh giá chi tiết và xếp hạng độ tin cậy cụ thể cho từng tài liệu.</p>
- <p><strong> 5. Viết báo cáo và trích dẫn:</strong>  Hoàn thiện báo cáo theo đúng cấu trúc và bắt buộc phải định dạng danh mục tài liệu tham khảo chuẩn theo phong cách Harvard.</p>
-<a class="btn" href="BAI_TAP_2_bao-cao-tim-kiem-va-danh-gia-thong-tin-hoc-thuat.pdf">Xem bài tập</a>
-</div>
+    <div class="project">
+      <span class="proj-num">BÀI 03</span>
+      <h3>🤖 Tổng quan về Trí tuệ nhân tạo</h3>
+      <h4>Bài tập 2: Viết Prompt hiệu quả cho tác vụ học tập</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Phát triển kỹ năng viết prompt hiệu quả để tận dụng tối đa khả năng của các mô hình ngôn ngữ lớn.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Chọn và phân tích 3 tác vụ học tập phổ biến</li>
+        <li><strong>2.</strong> Thiết kế 3 phiên bản prompt cho mỗi tác vụ (cơ bản → nâng cao)</li>
+        <li><strong>3.</strong> Thử nghiệm trên ChatGPT và chụp màn hình minh chứng</li>
+        <li><strong>4.</strong> So sánh và phân tích hiệu quả từng phiên bản</li>
+        <li><strong>5.</strong> Đúc kết nguyên tắc viết prompt và hoàn thiện báo cáo</li>
+      </ul>
+      <a class="proj-btn" href="BAI_3_bao-cao-thuc-hanh.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>🤖 Bài 3: Tổng quan về Trí tuệ nhân tạo</h3>
-<h4>Bài tập 2: Viết Prompt hiệu quả cho các tác vụ học tập</h4>
-<h4>🎯 Mục tiêu bài tập</h4>
-<p>Phát triển kỹ năng viết prompt hiệu quả để tận dụng tối đa khả năng của các mô hình ngôn ngữ lớn trong học tập.</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p><strong>1. Chọn và phân tích tác vụ:</strong>  Chọn đúng cả 3 tác vụ học tập phổ biến trong đề bài, đồng thời phân tích sâu sắc về mục tiêu và thách thức của từng tác vụ để làm nền tảng viết prompt.</p>
- <p><strong>2. Thiết kế 3 phiên bản prompt cho mỗi tác vụ:</strong>  Với mỗi tác vụ, hãy viết đủ 3 cấp độ từ cơ bản (đơn giản), cải tiến (chi tiết, có cấu trúc) cho đến nâng cao (áp dụng role prompting, chain-of-thought, hoặc few-shot).</p>
- <p><strong>3. Thử nghiệm và thu thập minh chứng:</strong>  Đưa các prompt này vào một công cụ AI (như ChatGPT) để chạy thử nghiệm, sau đó chụp lại màn hình toàn bộ quá trình thực hiện để làm minh chứng.</p>
- <p><strong>4. So sánh và phân tích kết quả:</strong>  Lập bảng so sánh kết quả đầu ra của 3 phiên bản prompt, từ đó phân tích chuyên sâu lý do tại sao một số prompt lại hoạt động hiệu quả hơn các prompt khác.</p>
-<p><strong> 5. Tổng hợp nguyên tắc và hoàn thiện báo cáo:</strong>  Đúc kết các mẹo viết prompt hiệu quả từ thực nghiệm, rồi hoàn thiện báo cáo, đính kèm đầy đủ bảng so sánh và ảnh chụp màn hình.</p>
-<a class="btn" href="BAI_3_bao-cao-thuc-hanh.pdf">Xem bài tập</a>
-</div>
+    <div class="project">
+      <span class="proj-num">BÀI 04</span>
+      <h3>💬 Giao tiếp và hợp tác trong môi trường số</h3>
+      <h4>Bài tập 3: Sử dụng công cụ hợp tác trực tuyến</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Thành thạo các công cụ hợp tác trực tuyến và thể hiện năng lực quản lý, điều phối cá nhân trong dự án nhóm.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Chọn bộ công cụ: Trello, Google Docs, Google Drive, Zalo</li>
+        <li><strong>2.</strong> Tự quản lý danh sách việc và chỉnh sửa tài liệu cộng tác</li>
+        <li><strong>3.</strong> Chụp màn hình làm nhật ký minh chứng (có tên tài khoản)</li>
+        <li><strong>4.</strong> Phân tích trải nghiệm và các thách thức khi làm nhóm</li>
+        <li><strong>5.</strong> Hoàn thiện báo cáo cá nhân kèm ảnh minh chứng</li>
+      </ul>
+      <a class="proj-btn" href="bai_4_.1.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>💬 Bài 4: Giao tiếp và hợp tác trong môi trường số</h3>
-<h4>Bài tập 3: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm </h4>
-<h4>🎯 Mục tiêu bài tập</h4>
-<p>Thành thạo các công cụ hợp tác trực tuyến và thể hiện năng lực quản lý, điều phối cá nhân trong dự án nhóm.</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p><strong>1. Lựa chọn bộ công cụ hợp tác:</strong>  Chọn ít nhất 3 công cụ từ các nhóm được yêu cầu như Trello (quản lý dự án), Google Docs (soạn thảo), Google Drive (lưu trữ) hoặc Zalo (giao tiếp) để thiết lập không gian làm việc nhóm.</p>
-<p> <strong>2. Thực hiện nhiệm vụ cá nhân và tương tác:</strong>  Chủ động tự quản lý danh sách việc được giao trên công cụ quản lý, trực tiếp chỉnh sửa tài liệu cộng tác, nhắn tin thảo luận nhóm và sắp xếp các tệp tin cá nhân phụ trách một cách khoa học.</p>
- <p><strong>3. Chụp ảnh màn hình làm nhật ký minh chứng: </strong> Thu thập và chụp lại màn hình toàn bộ quá trình thực hiện, đảm bảo các ảnh chụp hiển thị rõ ràng tên tài khoản hoặc phần đóng góp, sửa đổi trực tiếp của cá nhân bạn.</p>
-<p> <strong>4. Phân tích trải nghiệm và giải quyết thách thức:</strong>  Ghi chú lại chi tiết các tác vụ đã làm, đánh giá hiệu quả của công cụ và đặc biệt là phân tích các thách thức gặp phải khi tương tác nhóm cùng cách bạn đã giải quyết chúng.</p>
- <p><strong>5. Hoàn thiện báo cáo cá nhân:</strong>  Viết báo cáo mô tả chi tiết các nội dung trên, đồng thời đính kèm đầy đủ các ảnh chụp màn hình minh chứng có hiện diện tên hoặc tài khoản cá nhân trong không gian làm việc chung.</p>
-<a class="btn" href="bai_4_.1.pdf">Xem bài tập</a>
-</div>
+    <div class="project">
+      <span class="proj-num">BÀI 05</span>
+      <h3>🎨 Sáng tạo nội dung số</h3>
+      <h4>Bài tập 2: Dùng AI tạo sinh để hỗ trợ sáng tạo</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Thành thạo việc sử dụng các công cụ AI tạo sinh để hỗ trợ quá trình sáng tạo nội dung số.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Chọn dự án sáng tạo (thuyết trình, bài viết, infographic, video)</li>
+        <li><strong>2.</strong> Ứng dụng ít nhất 3 công cụ AI từ các nhóm khác nhau</li>
+        <li><strong>3.</strong> Ghi lại nhật ký prompt, kết quả và cách chỉnh sửa</li>
+        <li><strong>4.</strong> Kết hợp đầu ra AI với sáng tạo cá nhân</li>
+        <li><strong>5.</strong> Viết bài phân tích điểm mạnh/hạn chế của AI</li>
+        <li><strong>6.</strong> Nộp báo cáo kèm sản phẩm và ảnh minh họa</li>
+      </ul>
+      <a class="proj-btn" href="bai_5.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>🎨 Bài 5: Sáng tạo nội dung số</h3>
-<h4>Bài tập 2: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h4>
-<h4>🎯 Mục tiêu bài tập</h4>
-<p>Thành thạo việc sử dụng các công cụ AI tạo sinh để hỗ trợ quá trình sáng tạo nội dung số.</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p><strong>1. Chọn dự án:</strong> 
-Bạn cần lựa chọn một dự án sáng tạo nội dung cụ thể để thực hiện, ví dụ như bài thuyết trình, bài viết, infographic hoặc video ngắn.</p>
-<p><strong> 2. Sử dụng các công cụ AI:</strong> 
-Ứng dụng ít nhất 3 công cụ AI thuộc các nhóm khác nhau (như tạo văn bản, tạo hình ảnh, hỗ trợ thiết kế) để cùng tham gia vào quá trình sáng tạo.</p>
- <p><strong>3. Ghi lại quá trình sử dụng AI:</strong> 
-Lưu lại nhật ký chi tiết bao gồm các câu lệnh (prompt) đã dùng, kết quả nhận được, cách bạn chỉnh sửa và so sánh giữa các công cụ AI.</p>
-<p> <strong>4. Hoàn thiện sản phẩm:</strong> 
-Kết hợp các kết quả đầu ra của AI với sự đóng góp sáng tạo riêng của bản thân để tạo nên sản phẩm cuối cùng hoàn chỉnh.</p>
-<p> <strong>5. Viết bài phân tích đánh giá:</strong> 
-Nhìn nhận lại quá trình làm việc để phân tích điểm mạnh/hạn chế của AI, sự thay đổi trong quy trình của bạn và các vấn đề đạo đức cần cân nhắc.</p>
-<p> <strong>6. Chuẩn bị hồ sơ nộp bài:</strong> 
-Tổng hợp thành một báo cáo, kèm sản phẩm cuối cùng, ảnh chụp màn hình minh họa quá trình dùng AI và các phiên bản trung gian của dự án.</p>
-<a class="btn" href="bai_5.pdf">Xem bài tập</a>
-</div>
+    <div class="project">
+      <span class="proj-num">BÀI 06</span>
+      <h3>🔒 An toàn và liêm chính học thuật</h3>
+      <h4>Bài tập 4: Sử dụng AI có trách nhiệm</h4>
+      <h4>🎯 Mục tiêu</h4>
+      <p>Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học tập và nghiên cứu.</p>
+      <h4>⏳ Quá trình thực hiện</h4>
+      <ul>
+        <li><strong>1.</strong> Nghiên cứu chính sách AI của trường đại học</li>
+        <li><strong>2.</strong> Thực hiện nhiệm vụ học tập có sự hỗ trợ của AI</li>
+        <li><strong>3.</strong> Ghi lại prompt, kết quả và trích dẫn AI minh bạch</li>
+        <li><strong>4.</strong> Phân tích ranh giới gian lận, quyền sở hữu trí tuệ</li>
+        <li><strong>5.</strong> Xây dựng 5–7 nguyên tắc sử dụng AI có trách nhiệm</li>
+        <li><strong>6.</strong> Thiết kế infographic "Sử dụng AI có trách nhiệm"</li>
+        <li><strong>7.</strong> Hoàn thiện báo cáo kèm infographic</li>
+      </ul>
+      <a class="proj-btn" href="BAI_6.pdf">Xem bài tập</a>
+    </div>
 
-<div class="project">
-<h3>🔒 Bài 6: An toàn và liêm chính học thuật trong môi trường số</h3>
-<h4>Bài tập 4: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h4>
-<h4>🎯 Mục tiêu bài tập</h4>
-<p>Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học tập và nghiên cứu.</p>
-<h4>⏳Quá trình thực hiện</h4>
-<p><strong>1. Nghiên cứu chính sách:</strong> 
-Tìm hiểu quy định của trường bạn hoặc một trường đại học lớn tại Việt Nam về việc sử dụng AI trong học tập và nghiên cứu.</p>
-<p> <strong>2. Thực hiện nhiệm vụ học tập với AI:</strong> 
-Chọn một nhiệm vụ cụ thể (như viết luận, chuẩn bị thuyết trình, tổng hợp tài liệu) và triển khai nó với sự hỗ trợ từ công cụ AI.</p>
-<p> <strong>3. Ghi lại quá trình tương tác:</strong> 
-Lưu lại toàn bộ câu lệnh (prompt), kết quả đầu ra, cách bạn đánh giá, chỉnh sửa và thực hiện trích dẫn việc sử dụng AI một cách minh bạch.</p>
-<p> <strong>4. Phân tích khía cạnh đạo đức:</strong> 
-Đánh giá các vấn đề về ranh giới gian lận, quyền sở hữu trí tuệ, cách trích dẫn và tác động của AI đến quá trình phát triển kỹ năng cá nhân.</p>
-<p><strong> 5. Xây dựng bộ nguyên tắc cá nhân:</strong> 
-Tự thiết lập từ 5 đến 7 nguyên tắc cốt lõi cho bản thân về cách sử dụng AI có trách nhiệm trong học tập.</p>
- <p><strong>6. Thiết kế infographic minh họa:</strong> 
-Tạo một infographic trực quan với chủ đề "Sử dụng AI có trách nhiệm trong học thuật" để tóm tắt lại các nội dung trên.</p>
-<p> <strong>7. Chuẩn bị hồ sơ nộp bài:</strong> 
-Hoàn thiện một báo cáo chứa đầy đủ các phần phân tích, bộ nguyên tắc cùng với sản phẩm infographic đã thực hiện.</p>
-<a class="btn" href="BAI_6.pdf">Xem bài tập</a>
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<div class="kamon"><div class="kamon-l"></div><div class="kamon-c"></div><div class="kamon-r"></div></div>
+
+<!-- SUMMARY -->
 <section id="summary">
+  <div class="sec-head">
+    <span class="sec-eyebrow">三 ＿＿ TỔNG KẾT</span>
+    <div class="sec-title">Hành Trình Trưởng Thành Trong Kỷ Nguyên Số</div>
+    <span class="sec-jp">デジタル時代の成長の旅</span>
+  </div>
 
-    <h2 class="title">💖 Tổng Kết 💖</h2>
-    <h3 class="title">Hành Trình Trưởng Thành Trong Kỷ Nguyên Số</h3>
+  <div class="summary-card">
+    <h3>🌸 1. Trải nghiệm và cảm nhận cá nhân</h3>
+    <p>Nhìn lại hành trình xây dựng Portfolio, tôi nhận ra đây không chỉ là một yêu cầu học thuật nhằm tập hợp sản phẩm bài tập, mà còn là cơ hội để tự nhìn nhận và đánh giá sự phát triển của bản thân.</p><br>
+    <p>Từ sự bỡ ngỡ ban đầu trước tốc độ phát triển của công nghệ, việc chủ động thiết kế website cá nhân đã giúp tôi kết nối các kiến thức rời rạc thành một hệ thống hoàn chỉnh. Việc nhìn thấy sự tiến bộ của bản thân qua từng tuần học là động lực lớn và là minh chứng cho quá trình trưởng thành về nhận thức số.</p>
+  </div>
 
-    <!-- Trải nghiệm -->
-    <div class="card">
-        <h3>🌸 1. Trải nghiệm và cảm nhận cá nhân</h3>
+  <div class="summary-card">
+    <h3>📚 2. Kiến thức và kỹ năng cốt lõi đạt được</h3>
+    <ul>
+      <li><strong>💾 Làm chủ dữ liệu:</strong> Hiểu cấu trúc máy tính, cơ chế khai thác dữ liệu và biết cách chuyển hóa dữ liệu thô thành thông tin có giá trị phục vụ học tập và nghiên cứu.</li>
+      <li><strong>🤖 Tư duy AI (AI Literacy):</strong> Nắm được bản chất của học máy và mô hình ngôn ngữ lớn. Biết áp dụng kỹ thuật Prompt Engineering để khai thác AI hiệu quả và chủ động hơn.</li>
+      <li><strong>🌐 Kỹ năng số toàn diện:</strong> Thành thạo sáng tạo nội dung số, sử dụng các công cụ quản lý như Trello và Notion, đồng thời nâng cao nhận thức về an toàn thông tin và liêm chính học thuật.</li>
+    </ul>
+  </div>
 
-        <p>
-            Nhìn lại hành trình xây dựng Portfolio, tôi nhận ra đây không chỉ là một yêu cầu học thuật
-            nhằm tập hợp sản phẩm bài tập, mà còn là cơ hội để tự nhìn nhận và đánh giá sự phát triển của bản thân.
-        </p>
-
-        <p>
-            Từ sự bỡ ngỡ ban đầu trước tốc độ phát triển của công nghệ, việc chủ động thiết kế website cá nhân
-            đã giúp tôi kết nối các kiến thức rời rạc thành một hệ thống hoàn chỉnh. Việc nhìn thấy sự tiến bộ
-            của bản thân qua từng tuần học là động lực lớn và là minh chứng cho quá trình trưởng thành về nhận thức số.
-        </p>
+  <div class="summary-card">
+    <h3>✨ 3. Điều tâm đắc và những thách thức đã vượt qua</h3>
+    <div class="highlight">
+      <h4>💡 ĐIỀU TÂM ĐẮC NHẤT</h4>
+      <p>Tôi đã chuyển từ vai trò một <strong>"Người tiêu dùng số"</strong> sang <strong>"Người điều phối AI"</strong>. AI không chỉ là công cụ hỗ trợ, mà còn là cộng sự giúp mở rộng khả năng tiếp cận tri thức và sáng tạo.</p>
     </div>
-
-    <!-- Kiến thức -->
-    <div class="card">
-        <h3>📚 2. Kiến thức và kỹ năng cốt lõi đạt được</h3>
-
-        <ul class="summary-list">
-            <li>
-                <strong>💾 Làm chủ dữ liệu:</strong>
-                Hiểu cấu trúc máy tính, cơ chế khai thác dữ liệu và biết cách chuyển hóa dữ liệu thô
-                thành thông tin có giá trị phục vụ học tập và nghiên cứu.
-            </li>
-
-            <li>
-                <strong>🤖 Tư duy AI (AI Literacy):</strong>
-                Nắm được bản chất của học máy và mô hình ngôn ngữ lớn. Biết áp dụng kỹ thuật Prompt Engineering
-                để khai thác AI hiệu quả và chủ động hơn.
-            </li>
-
-            <li>
-                <strong>🌐 Kỹ năng số toàn diện:</strong>
-                Thành thạo sáng tạo nội dung số, sử dụng các công cụ quản lý như Trello và Notion,
-                đồng thời nâng cao nhận thức về an toàn thông tin và liêm chính học thuật.
-            </li>
-        </ul>
+    <div class="highlight">
+      <h4>🚀 NHỮNG THÁCH THỨC ĐÃ VƯỢT QUA</h4>
+      <ul>
+        <li><strong>Về công nghệ:</strong> Từng bước chinh phục các khái niệm phần cứng và thuật toán bằng cách chia nhỏ mục tiêu và thực hành thường xuyên.</li>
+        <li><strong>Về cộng tác:</strong> Giải quyết bất đồng và quản lý tiến độ nhóm hiệu quả thông qua Trello, sử dụng nhãn công việc và quy ước đặt tên tệp thống nhất.</li>
+        <li><strong>Về đạo đức số:</strong> Duy trì nguyên tắc trích dẫn nguồn minh bạch, kiểm chứng thông tin đa chiều và sử dụng AI một cách có trách nhiệm.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Tâm đắc -->
-    <div class="card">
-        <h3>✨ 3. Điều tâm đắc và những thách thức đã vượt qua</h3>
-
-        <div class="highlight-box">
-            <h4>💡 Điều tâm đắc nhất</h4>
-            <p>
-                Tôi đã chuyển từ vai trò một <strong>“Người tiêu dùng số”</strong> sang
-                <strong>“Người điều phối AI”</strong>. AI không chỉ là công cụ hỗ trợ,
-                mà còn là cộng sự giúp mở rộng khả năng tiếp cận tri thức và sáng tạo.
-            </p>
-        </div>
-
-        <div class="highlight-box">
-            <h4>🚀 Những thách thức đã vượt qua</h4>
-
-            <ul class="summary-list">
-                <li>
-                    <strong>Về công nghệ:</strong>
-                    Từng bước chinh phục các khái niệm phần cứng và thuật toán bằng cách chia nhỏ mục tiêu
-                    và thực hành thường xuyên.
-                </li>
-
-                <li>
-                    <strong>Về cộng tác:</strong>
-                    Giải quyết bất đồng và quản lý tiến độ nhóm hiệu quả thông qua Trello,
-                    sử dụng nhãn công việc và quy ước đặt tên tệp thống nhất.
-                </li>
-
-                <li>
-                    <strong>Về đạo đức số:</strong>
-                    Duy trì nguyên tắc trích dẫn nguồn minh bạch, kiểm chứng thông tin đa chiều
-                    và sử dụng AI một cách có trách nhiệm.
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Tương lai -->
-    <div class="card">
-        <h3>🎯 4. Định hướng ứng dụng trong tương lai</h3>
-
-        <p>
-            Với tư cách là sinh viên ngành Nhật Bản học, tôi mong muốn tiếp tục ứng dụng các kỹ năng số
-            và AI vào học tập, nghiên cứu cũng như công việc trong tương lai.
-        </p>
-
-        <ul class="summary-list">
-            <li>
-                <strong>📊 Số hóa nghiên cứu chuyên ngành:</strong>
-                Khai thác dữ liệu để nghiên cứu các vấn đề xã hội, kinh tế và văn hóa Nhật Bản
-                một cách khoa học và trực quan hơn.
-            </li>
-
-            <li>
-                <strong>🗾 Ứng dụng AI trong học tiếng Nhật:</strong>
-                Sử dụng AI để luyện hội thoại, hệ thống hóa Kanji, hỗ trợ dịch thuật
-                và nâng cao năng lực ngôn ngữ.
-            </li>
-
-            <li>
-                <strong>🧠 Quản trị tri thức cá nhân:</strong>
-                Duy trì Notion và Trello như một "Second Brain" giúp lưu trữ,
-                quản lý kiến thức và các dự án học tập lâu dài.
-            </li>
-        </ul>
-    </div>
-
+  <div class="summary-card">
+    <h3>🎯 4. Định hướng ứng dụng trong tương lai</h3>
+    <p>Với tư cách là sinh viên ngành Nhật Bản học, tôi mong muốn tiếp tục ứng dụng các kỹ năng số và AI vào học tập, nghiên cứu cũng như công việc trong tương lai.</p><br>
+    <ul>
+      <li><strong>📊 Số hóa nghiên cứu chuyên ngành:</strong> Khai thác dữ liệu để nghiên cứu các vấn đề xã hội, kinh tế và văn hóa Nhật Bản một cách khoa học và trực quan hơn.</li>
+      <li><strong>🗾 Ứng dụng AI trong học tiếng Nhật:</strong> Sử dụng AI để luyện hội thoại, hệ thống hóa Kanji, hỗ trợ dịch thuật và nâng cao năng lực ngôn ngữ.</li>
+      <li><strong>🧠 Quản trị tri thức cá nhân:</strong> Duy trì Notion và Trello như một "Second Brain" giúp lưu trữ, quản lý kiến thức và các dự án học tập lâu dài.</li>
+    </ul>
+  </div>
 </section>
+
+<div class="kamon"><div class="kamon-l"></div><div class="kamon-c"></div><div class="kamon-r"></div></div>
+
 <footer>
-
-✨ Cảm ơn đã ghé thăm Portfolio của mình ✨
-
-<br><br>
-
-🌸 Ngọ Phương Anh | 日本語学習者 🌸
-
+  <div class="footer-jp">🌸 日本語学習者 · Ngọ Phương Anh 🌸</div>
+  <div class="footer-sub">ありがとうございます — Cảm ơn đã ghé thăm Portfolio của mình</div>
 </footer>
 
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  var c=document.getElementById('sakuraBg');
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><ellipse cx="10" cy="6" rx="4.5" ry="6" fill="#E8A0B4" opacity=".75"/><ellipse cx="10" cy="6" rx="4.5" ry="6" fill="#E8A0B4" opacity=".65" transform="rotate(72 10 10)"/><ellipse cx="10" cy="6" rx="4.5" ry="6" fill="#F2B8C8" opacity=".65" transform="rotate(144 10 10)"/><ellipse cx="10" cy="6" rx="4.5" ry="6" fill="#E8A0B4" opacity=".65" transform="rotate(216 10 10)"/><ellipse cx="10" cy="6" rx="4.5" ry="6" fill="#F2B8C8" opacity=".65" transform="rotate(288 10 10)"/><circle cx="10" cy="10" r="1.8" fill="#FAD9E5"/></svg>';
+  var src='data:image/svg+xml,'+encodeURIComponent(svg);
+  for(var i=0;i<16;i++){
+    var el=document.createElement('img');
+    el.src=src;
+    var s=10+Math.random()*16;
+    el.style.cssText='position:absolute;width:'+s+'px;height:'+s+'px;left:'+(Math.random()*100)+'%;top:-30px;opacity:0;animation:fall '+(7+Math.random()*10)+'s '+(Math.random()*12)+'s linear infinite;';
+    c.appendChild(el);
+  }
+})();
+</script>
 </body>
 </html>
