@@ -1,123 +1,163 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Hộp quà 20/10</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Pacifico&display=swap">
-<style>
-/* Layout: nền bình minh, lời chúc ở trên, hộp quà đặt trên đồi cỏ phía dưới, hoa mọc từ miệng hộp */
-:root {
-  --sky-top: #cfe9ff;
-  --sky-mid: #ffe6ef;
-  --sky-bottom: #fff4e0;
-  --ink: #4a1a35;
-  --muted: #8a5a72;
-  --accent: #e0407f;
-  --font-display: 'Pacifico', 'Segoe Script', 'Brush Script MT', cursive;
-  --font-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  color-scheme: light;
-}
-html, body { height: 100%; }
-body {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: var(--sky-mid);
-  background-image: linear-gradient(180deg, var(--sky-top), var(--sky-mid) 55%, var(--sky-bottom));
-  color: var(--ink);
-  font-family: var(--font-body);
-  overflow: hidden;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-#sky {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  display: block;
-  touch-action: manipulation;
-  cursor: pointer;
-}
-.open {
-  position: fixed;
-  z-index: 3;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  border-radius: 12px;
-}
-.open:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-.top {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  max-width: 34rem;
-  margin: 0 auto;
-  padding-block: clamp(20px, 5vh, 48px) 0;
-  text-align: center;
-  pointer-events: none;
-}
-.top > * { grid-area: 1 / 1; min-width: 0; }
-.eyebrow {
-  min-height: 1.2em;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-h1, h2 {
-  margin: 0.3em 0 0.35em;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.7rem, 6.6vw, 2.7rem);
-  line-height: 1.35;
-  color: var(--ink);
-  text-wrap: balance;
-  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
-}
-.body, .lead {
-  margin: 0 auto;
-  max-width: 30rem;
-  font-weight: 400;
-  font-size: clamp(0.92rem, 2.7vw, 1.05rem);
-  line-height: 1.7;
-  color: var(--muted);
-  text-wrap: pretty;
-}
-.lead { animation: pulse 2.4s ease-in-out infinite; }
-.sign {
-  margin-top: 0.4em;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--accent);
-}
-.prompt { transition: opacity 0.5s ease; }
-.prompt.gone { opacity: 0; }
-.w { display: inline-block; white-space: nowrap; }
-.c { display: inline-block; opacity: 0; transform: translateY(6px); filter: blur(3px); transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease; }
-.c.on { opacity: 1; transform: none; filter: none; }
-.hint {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-  text-align: center;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: #fff;
-  text-shadow: 0 1px 6px rgba(30, 80, 40, 0.65);
-  pointer-events: none;
-  opacity: 0;
-}
-.hint.show { animation: hintin 1.2s ease 8s forwards; }
-@keyframes hintin { to { opacity: 0.95; } }
-@keyframes pulse { 50% { opacity: 0.5; } }
-@media (prefers-reduced-motion: reduce) {
-  .c, .prompt { transition: none; }
-  .lead { animation: none; }
-  .hint.show { animation-delay: 0s; animation-duration: 0.01s; }
-}
-</style>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hộp quà 20/10</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Pacifico&display=swap">
+  <style>
+    :root {
+      --sky-top: #cfe9ff;
+      --sky-mid: #ffe6ef;
+      --sky-bottom: #fff4e0;
+      --ink: #4a1a35;
+      --muted: #8a5a72;
+      --accent: #e0407f;
+      --font-display: 'Pacifico', 'Segoe Script', 'Brush Script MT', cursive;
+      --font-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    html, body { height: 100%; }
+    html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--sky-mid);
+      background-image: linear-gradient(180deg, var(--sky-top), var(--sky-mid) 55%, var(--sky-bottom));
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 14px;
+      overflow: hidden;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+    }
+    img { max-width: 100%; }
+    [hidden]:not([hidden=until-found i]) { display: none !important; }
+
+    #sky {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: block;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    .open {
+      position: fixed;
+      z-index: 3;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+    .open:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    
+    /* Tối ưu khung chứa chữ phía trên */
+    .top {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      max-width: 32rem;
+      margin: 0 auto;
+      padding-block: clamp(12px, 3vh, 32px) 0;
+      text-align: center;
+      pointer-events: none;
+    }
+    .top > * { grid-area: 1 / 1; min-width: 0; }
+    
+    .eyebrow {
+      min-height: 1.2em;
+      font-size: clamp(0.65rem, 2vw, 0.75rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2 {
+      margin: 0.2em 0 0.25em;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 5.5vw, 2.3rem);
+      line-height: 1.3;
+      color: var(--ink);
+      text-wrap: balance;
+      text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Thêm scroll mượt nếu văn bản quá dài trên màn hình di động nhỏ */
+    .msg, .prompt {
+      max-height: 42vh;
+      overflow-y: auto;
+      pointer-events: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(224, 64, 127, 0.3) transparent;
+    }
+    .msg::-webkit-scrollbar { width: 4px; }
+    .msg::-webkit-scrollbar-thumb { background: rgba(224, 64, 127, 0.3); border-radius: 4px; }
+
+    .body, .lead {
+      margin: 0 auto;
+      max-width: 28rem;
+      font-weight: 400;
+      font-size: clamp(0.82rem, 2.5vw, 0.98rem);
+      line-height: 1.55;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+    .lead { animation: pulse 2.4s ease-in-out infinite; }
+    .sign {
+      margin-top: 0.3em;
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: var(--accent);
+    }
+    .prompt { transition: opacity 0.5s ease; }
+    .prompt.gone { opacity: 0; pointer-events: none; }
+    .w { display: inline-block; white-space: nowrap; }
+    .c { display: inline-block; opacity: 0; transform: translateY(6px); filter: blur(3px); transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease; }
+    .c.on { opacity: 1; transform: none; filter: none; }
+    .hint {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 1px 6px rgba(30, 80, 40, 0.65);
+      pointer-events: none;
+      opacity: 0;
+    }
+    .hint.show { animation: hintin 1.2s ease 8s forwards; }
+    
+    @keyframes hintin { to { opacity: 0.95; } }
+    @keyframes pulse { 50% { opacity: 0.5; } }
+
+    /* Quy tắc riêng cho màn hình điện thoại thấp / nhỏ */
+    @media (max-height: 700px), (max-width: 380px) {
+      .top { padding-block: 8px 0; }
+      .msg, .prompt { max-height: 38vh; }
+      h1, h2 { font-size: clamp(1.2rem, 4.8vw, 1.8rem); margin: 0.15em 0; }
+      .body, .lead { font-size: 0.8rem; line-height: 1.45; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .c, .prompt { transition: none; }
+      .lead { animation: none; }
+      .hint.show { animation-delay: 0s; animation-duration: 0.01s; }
+    }
+  </style>
+</head>
+<body>
 
 <canvas id="sky" aria-label="Hộp quà mở ra một bó hoa trên đồi cỏ"></canvas>
 <div class="top">
@@ -143,9 +183,8 @@ h1, h2 {
   var TEXT = [
     '20 tháng 10',
     'Chúc mừng 20/10, ' + NAME,
-    'Hôm nay là 20/10. Gửi mẹ một chút yêu thương và đầy sự đáng yêu, một chút ngọt ngào của ngày 20/10 . Chúc mẹ của con luôn luôn vui vẻ và hạnh phúc nha . ',
-    'Mong mẹ mỗi ngày đều đi đứng cẩn thận, trẻ trung và mãi là điểm tựa vứng chắc của con.',
-    'Con chúc mẹ sẽ luôn mạnh khỏe và ngày càng xinh đẹp.'
+    'Hôm nay là 20/10. Gửi mẹ một chút yêu thương, sự đáng yêu và ngọt ngào. Chúc mẹ luôn vui vẻ, hạnh phúc, có thật nhiều sức khỏe. Cảm ơn mẹ luôn dành những điều tốt đẹp nhất và tình yêu thương nhất đến con. Con hứa sẽ nỗ lực mỗi ngày để mẹ yên tâm và mỉm cười tự hào về con.',
+    'Con chúc mẹ sẽ luôn mạnh khỏe và ngày càng xinh đẹp!'
   ];
   // ==============================
 
@@ -415,7 +454,6 @@ h1, h2 {
     paintHead(x, y, R * pop, b, fl);
   }
 
-
   function heart(x, y, s, color, alpha) {
     ctx.save(); ctx.translate(x, y); ctx.globalAlpha = alpha; ctx.fillStyle = color;
     ctx.beginPath(); ctx.moveTo(0, s * 0.4);
@@ -513,6 +551,7 @@ h1, h2 {
     var out = [];
     items.forEach(function (str, idx) {
       var host = document.getElementById(prefix + idx);
+      if (!host) return;
       host.setAttribute('aria-label', str);
       str.split(' ').forEach(function (word, wi) {
         if (wi > 0) host.appendChild(document.createTextNode(' '));
@@ -829,4 +868,5 @@ h1, h2 {
 })();
 </script>
 
-</body></html>
+</body>
+</html>
